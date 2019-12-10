@@ -1,0 +1,20 @@
+dist: trusty
+language: java
+jdk:
+   -openjdk13
+addons:
+  apt:
+    packages:
+      - ant
+script: ant build
+
+addons:
+  sonarcloud:
+    organization: "michelalattanzi"
+    token:
+      secure: "92d6f5dc958531613ac79fbdeb86198678c1369d"
+
+script:
+  - sonar-scanner
+
+
